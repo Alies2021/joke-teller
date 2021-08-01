@@ -34,10 +34,8 @@ function tellJoke(message) {
 
 const displayQuestionJoke = (message) => {
     const promise = new Promise((resolve) => {
-        setTimeout(() => {
             resolve();
             displayJokeText(message);
-        }, 100);
     });
     return promise;
 }
