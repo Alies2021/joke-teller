@@ -35,9 +35,11 @@ const tellJoke = (questionJoke, answerJoke) => {
    synthesizer.speak(speech);
    if (synthesizer.speaking) {
         showJoke(actualJoke);
+        triggeringButtons(true);
    } 
    speech.onend = () => {
       deleteJoke();
+      triggeringButtons(false);
    }
 }
 
@@ -72,6 +74,9 @@ newJokeBtn.addEventListener('click', getJokes);
 
 lastJokeBtn.addEventListener('click', () => {
     const { setupJoke, deliveryJoke } = lastJoke;
+    if (!setupJoke && !deliveryJoke) {
+        return;
+    }
     tellJoke(setupJoke, deliveryJoke);
 })
 
