@@ -12,13 +12,13 @@ body { background-color:rgb(243, 156, 177); }
   min-height: 80vh;
   min-width: 100vw;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   background: url('./jester.gif');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: left center;
+  background-position: center center;
   background-color: rgb(243, 156, 177);
 }
 
@@ -79,19 +79,21 @@ section {
 }
 
 /* responsive layout */
-@media screen and (max-width: 1000px) {
-    .container {
-      background-position: center center; 
-      background-size: cover;
-    }
+
+@media screen and (max-width: 700px) {
+   button {
+      width: 150px;
+      height: 30px;
+      font-size: 16px;
+   }
 }
 
 @media screen and (max-width: 400px) {
-  #btn {
-    width: 180px;
-    height: 40px;
-    font-size: 16px;
-    box-shadow: 3px 3px 10px black, -3px -3px 10px black;
+  #new-joke-btn, #last-joke-btn  {
+    width: 90px;
+    height: 30px;
+    font-size: 13px;
+    padding: 4px;
   }
 }
 
@@ -104,3 +106,4 @@ section {
     opacity: 1;
   }
 }
+
